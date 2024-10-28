@@ -1,0 +1,17 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "outbound-poc-dispatcher"
+main = "src/index.js"
+compatibility_date = "2024-10-22"
+compatibility_flags = ["nodejs_compat"]
+
+[route]
+zone_name = "drivas.xyz"
+pattern = "outbound-poc-dispatcher.drivas.xyz/*"
+
+[observability]
+enabled = true
+
+[[dispatch_namespaces]]
+binding = "DISPATCHER"
+namespace = "outbound-poc"
+outbound = { service = "outbound-poc-outbound", parameters = ["params"] }

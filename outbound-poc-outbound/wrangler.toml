@@ -1,0 +1,12 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "outbound-poc-outbound"
+main = "src/index.js"
+compatibility_date = "2024-10-22"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
+
+[observability]
+enabled = false
+
+[[unsafe.bindings]]
+type = "origin" # NOTE: need both the flag and the binding (for now).
+name = "ORIGIN"
